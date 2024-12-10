@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const App = () => {
   const [counter, setCounter] = useState(0);
-  const test123131 = 123131;
+  const awdawdwa = 1233131;
 
   const onClick = () => {
     setCounter(counter + 1);
