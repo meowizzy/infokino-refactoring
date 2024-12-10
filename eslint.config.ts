@@ -38,6 +38,7 @@ export default tsEslint.config(
       "@typescript-eslint/no-unsafe-assignment": "warn",
       "@typescript-eslint/strict-boolean-expressions": "off",
       "@typescript-eslint/consistent-type-definitions": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
       "@/quotes": ["warn", "double", { avoidEscape: true }],
       semi: ["error", "always"],
       indent: [1, 2],
