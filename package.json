@@ -67,7 +67,7 @@
   "lint-staged": {
     "*.{jsx,js,ts,tsx}": [
       "prettier --write",
-      "eslint --flag unstable_ts_config"
+      "npm run lint"
     ]
   }
 }
