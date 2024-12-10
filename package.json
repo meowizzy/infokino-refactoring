@@ -18,7 +18,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{jsx,js,ts,tsx}": [
+    "*.{jsx,js,ts,tsx}": [
       "prettier --write",
       "eslint --flag unstable_ts_config"
     ]
