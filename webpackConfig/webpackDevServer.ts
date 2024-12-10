@@ -2,10 +2,10 @@ import path from "node:path";
 import { TWebpackOptions } from "./types";
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
-export function webpackDevServer(options: TWebpackOptions): DevServerConfiguration {
-  const {
-    port
-  } = options;
+export function webpackDevServer(
+  options: TWebpackOptions,
+): DevServerConfiguration {
+  const { port } = options;
 
   return {
     historyApiFallback: true,
@@ -13,27 +13,28 @@ export function webpackDevServer(options: TWebpackOptions): DevServerConfigurati
     open: true,
     hot: true,
     compress: true,
+    liveReload: false,
     client: {
-      progress: true
+      progress: true,
     },
     static: {
-      directory: path.resolve(__dirname, "public")
+      directory: path.resolve(__dirname, "public"),
     },
     proxy: [
       {
         context: "/movies",
         target: "https://api.kinopoisk.dev",
-        pathRewrite: { '^/movies': '' },
+        pathRewrite: { "^/movies": "" },
         secure: false,
         changeOrigin: true,
       },
       {
         context: "/api",
         target: "https://web-production-07b8.up.railway.app",
-        pathRewrite: { '^/api': '' },
+        pathRewrite: { "^/api": "" },
         secure: false,
         changeOrigin: true,
-      }
-    ]
-  }
+      },
+    ],
+  };
 }

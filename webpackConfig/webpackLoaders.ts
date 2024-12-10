@@ -1,23 +1,23 @@
-import {TWebpackOptions} from "./types";
+import { TWebpackOptions } from "./types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 
-export function webpackLoaders(options: TWebpackOptions): webpack.RuleSetRule[] {
-  const {
-    isDev
-  } = options;
+export function webpackLoaders(
+  options: TWebpackOptions,
+): webpack.RuleSetRule[] {
+  const { isDev } = options;
 
   const babelTsLoader = {
     test: /\.(jsx?|tsx?)$/,
     exclude: /node_modules/,
     use: [
       {
-        loader: "babel-loader"
+        loader: "babel-loader",
       },
       {
-        loader: "ts-loader"
-      }
-    ]
+        loader: "ts-loader",
+      },
+    ],
   };
 
   const scssLoader = {
@@ -29,16 +29,13 @@ export function webpackLoaders(options: TWebpackOptions): webpack.RuleSetRule[] 
         options: {
           import: true,
           modules: {
-            namedExport: false
-          }
-        }
+            namedExport: false,
+          },
+        },
       },
-      "sass-loader"
+      "sass-loader",
     ],
   };
 
-  return [
-    babelTsLoader,
-    scssLoader
-  ];
+  return [babelTsLoader, scssLoader];
 }

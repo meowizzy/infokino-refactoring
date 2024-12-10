@@ -4,5 +4,5 @@ export const test = {
   },
   multiple: (a: number, b: number) => {
     return a * b;
-  }
-}
+  },
+};

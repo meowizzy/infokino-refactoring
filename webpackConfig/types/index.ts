@@ -1,5 +1,3 @@
-import path from "node:path";
-
 export type TWebpackMode = "development" | "production";
 
 export type TWebpackPaths = {
@@ -7,6 +5,11 @@ export type TWebpackPaths = {
   src: string;
   entry: string;
   build: string;
+};
+
+export type TWebpackEnv = {
+  mode: TWebpackMode;
+  port: number;
 };
 
 export type TWebpackOptions = {

@@ -9,5 +9,5 @@ export function webpackResolvers(): webpack.ResolveOptions {
     //   'node_modules'
     // ],
     // mainFiles: ['index'],
-  }
+  };
 }
