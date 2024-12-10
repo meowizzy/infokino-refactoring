@@ -3,6 +3,12 @@ declare module "*.scss" {
   export default content;
 }
 
+declare module "*.svg?url" {
+  import React from "react";
+  const content: React.ReactNode;
+  export default content;
+}
+
 declare module "*.svg" {
   import type React from "react";
   const SVG: React.FC<React.SVGProps<SVGSVGElement>>;
