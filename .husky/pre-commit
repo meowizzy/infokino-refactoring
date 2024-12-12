@@ -1,2 +1,1 @@
-prettier . --write
-eslint --flag unstable_ts_config
+npm run pre-commit
