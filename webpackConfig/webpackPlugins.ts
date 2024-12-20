@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { TWebpackOptions } from "./types";
 import webpack from "webpack";
 import ReactRefreshPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
 export function webpackPlugins(
   options: TWebpackOptions,
@@ -16,6 +17,17 @@ export function webpackPlugins(
     new MiniCssExtractPlugin({
       filename: "bundle.[contenthash:8].css",
       chunkFilename: "chunk.[contenthash:8].css",
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public",
+          to: path.build,
+          globOptions: {
+            ignore: ["**/*.html"],
+          },
+        },
+      ],
     }),
   ];
 

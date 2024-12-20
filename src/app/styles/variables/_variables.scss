@@ -1,0 +1,52 @@
+:root {
+  --blur-sm: 10px;
+  --blur-md: 14px;
+  --blur-lg: 20px;
+
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --transition: 0.3s;
+
+  --min-width: 360px;
+  --container-max-width: 1400px;
+
+  --height-sm: 35px;
+  --height-md: 40px;
+  --height-lg: 47px;
+
+  --button-sm-padding-horizontal: 14px;
+  --button-sm-padding-vertical: 6.5px;
+  --button-sm-height: var(--height-sm);
+
+  --button-md-padding-horizontal: 20px;
+  --button-md-padding-vertical: 10.5px;
+  --button-md-height: var(--height-md);
+
+  --button-lg-padding-horizontal: 26px;
+  --button-lg-padding-vertical: 15px;
+  --button-lg-height: var(--height-lg);
+
+  --input-sm-padding-horizontal: 9px;
+  --input-sm-padding-vertical: 7px;
+  --input-sm-height: var(--height-sm);
+
+  --input-md-padding-horizontal: 12px;
+  --input-md-padding-vertical: 8.5px;
+  --input-md-height: var(--height-md);
+
+  --input-lg-padding-horizontal: 15px;
+  --input-lg-padding-vertical: 14.5px;
+  --input-lg-height: var(--height-lg);
+
+  --main-font: 'OpenSans';
+  --toastify-color-light: var(--color-primary);
+  --toastify-text-color-light: var(--color-white);
+  --toastify-color-progress-error: var(--color-danger);
+  --toastify-icon-color-error: var(--color-danger);
+  --toastify-color-progress-success: var(--color-main);
+  --toastify-icon-color-success: var(--color-main);
+  --toastify-toast-bd-radius: 0;
+}

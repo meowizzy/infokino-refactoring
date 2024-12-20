@@ -5,6 +5,7 @@ export type TWebpackPaths = {
   src: string;
   entry: string;
   build: string;
+  public: string;
 };
 
 export type TWebpackEnv = {

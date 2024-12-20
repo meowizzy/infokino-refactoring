@@ -1,0 +1,36 @@
+:root {
+  --collor-white-rgb: 255,255,255;
+  --color-white: rgb(var(--collor-white-rgb));
+
+  --color-black-rgb: 0,0,0;
+  --color-black: rgb(var(--color-black-rgb));
+
+  --color-gray-rgb: 121, 121, 121;
+  --color-gray: rgb(var(--color-gray-rgb));
+
+  --color-light-gray-rgb: 185, 185, 185;
+  --color-light-gray: rgb(var(--color-light-gray-rgb));
+
+  --color-primary-rgb: 34, 34, 37;
+  --color-primary: rgb(var(--color-primary-rgb));
+
+  --color-primary-hover-rgb: 42, 42, 46;
+  --color-primary-hover: rgb(var(--color-primary-hover-rgb));
+
+  --color-primary-dark-rgb: 22, 21, 21;
+  --color-primary-dark: rgb(var(--color-primary-dark-rgb));
+
+  --color-accent-rgb: 64, 106, 255;
+  --color-accent: rgb(var(--color-accent-rgb));
+
+  --color-accent-hover-rgb: 101, 135, 255;
+  --color-accent-hover: rgb(var(--color-accent-hover-rgb));
+
+  --color-border: rgba(91, 91, 91, .13);
+
+  --color-danger-rgb: 194, 86, 86;
+  --color-danger: rgb(var(--color-danger-rgb));
+
+  --color-danger-hover-rgb: 213, 98, 98;
+  --color-danger-hover: rgb(var(--color-danger-hover-rgb));
+}

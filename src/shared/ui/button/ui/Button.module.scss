@@ -1,0 +1,117 @@
+.button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  transition: var(--transition);
+  color: var(--color-white);
+  border: 0;
+  border-radius: var(--radius-lg);
+
+  svg {
+    width: 19px;
+    height: 19px;
+    margin-right: 10px;
+    transition: var(--transition);
+  }
+
+  &:disabled {
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(var(--color-white-rgb), .3);
+    }
+    pointer-events: none;
+  }
+}
+
+.sm {
+  padding: var(--button-sm-padding-vertical) var(--button-sm-padding-horizontal);
+  height: var(--button-sm-height);
+  border-radius: var(--radius-sm);
+  &.onlyIcon {
+    padding: var(--button-sm-padding-vertical);
+    width: var(--button-sm-height);
+  }
+}
+
+.md {
+  padding: var(--button-md-padding-vertical) var(--button-md-padding-horizontal);
+  height: var(--button-md-height);
+  border-radius: var(--radius-md);
+  &.onlyIcon {
+    padding: var(--button-md-padding-vertical);
+    width: var(--button-md-height);
+  }
+}
+
+.lg {
+  padding: var(--button-lg-padding-vertical) var(--button-lg-padding-horizontal);
+  height: var(--button-lg-height);
+  border-radius: var(--radius-lg);
+  &.onlyIcon {
+    padding: var(--button-lg-padding-vertical);
+    width: var(--button-lg-height);
+  }
+}
+
+.isLoading {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    border-bottom-color: transparent;
+    opacity: .6;
+    display: block;
+    margin-right: 5px;
+    &:global {
+      animation: rotating 1s infinite linear;
+    }
+  }
+}
+
+.onlyIcon {
+  &:before, svg {
+    margin-right: 0;
+  }
+}
+
+.primary {
+  background-color: var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.danger {
+  background-color: var(--color-danger);
+
+  &:hover {
+    background-color: var(--color-danger-hover);
+  }
+}
+
+.accent {
+  background-color: var(--color-accent);
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+  }
+}
+
+.clear {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}

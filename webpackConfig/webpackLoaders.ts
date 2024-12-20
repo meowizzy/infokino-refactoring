@@ -6,6 +6,37 @@ export function webpackLoaders(
   options: TWebpackOptions,
 ): webpack.RuleSetRule[] {
   const { isDev } = options;
+  const fontsRegex = /\.(woff|woff2)$/i;
+  const imagesRegex = /\.(png|jpe?g|gif)$/i;
+
+  const imagesLoader = {
+    test: imagesRegex,
+    type: "asset/resource",
+    generator: {
+      filename: "assets/images/[name][ext]",
+    },
+  };
+
+  const fontsLoader = {
+    test: fontsRegex,
+    type: "asset/resource",
+    generator: {
+      filename: "assets/fonts/[name][ext]",
+    },
+  };
+
+  const svgrLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: [
+      {
+        loader: "@svgr/webpack",
+        options: {
+          dimensions: false,
+        },
+      },
+    ],
+  };
 
   const babelTsLoader = {
     test: /\.(jsx?|tsx?)$/,
@@ -29,6 +60,10 @@ export function webpackLoaders(
         options: {
           import: true,
           modules: {
+            auto: (resPath: string) => Boolean(resPath.includes(".module.")),
+            localIdentName: isDev
+              ? "[name]___[hash:base64:5]"
+              : "[hash:base64:5]",
             namedExport: false,
           },
         },
@@ -37,5 +72,5 @@ export function webpackLoaders(
     ],
   };
 
-  return [babelTsLoader, scssLoader];
+  return [babelTsLoader, scssLoader, svgrLoader, imagesLoader, fontsLoader];
 }

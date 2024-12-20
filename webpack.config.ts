@@ -1,5 +1,5 @@
-import { WebpackConfiguration } from "webpack-cli";
 import path from "node:path";
+import { WebpackConfiguration } from "webpack-cli";
 import { TWebpackEnv, TWebpackOptions } from "./webpackConfig/types";
 import { webpackResolvers } from "./webpackConfig/webpackResolvers";
 import { webpackPlugins } from "./webpackConfig/webpackPlugins";
@@ -17,6 +17,7 @@ export default (env: TWebpackEnv): WebpackConfiguration => {
       src: path.resolve(__dirname, "src"),
       entry: path.resolve(__dirname, "src", "index.tsx"),
       build: path.resolve(__dirname, "build"),
+      public: path.resolve(__dirname, "src", "public"),
     },
     isDev,
     mode,
@@ -32,7 +33,7 @@ export default (env: TWebpackEnv): WebpackConfiguration => {
     module: {
       rules: webpackLoaders(options),
     },
-    resolve: webpackResolvers(),
+    resolve: webpackResolvers(options),
     devServer: webpackDevServer(options),
     output: {
       path: path.resolve(__dirname, "build"),
