@@ -12,19 +12,25 @@ export type TabsDataType = {
 type PropsType = {
   items: Array<TabsDataType>;
   className?: string;
-  defaultKey?: TabsDataType["key"];
-  onChange?: (key: TabsDataType["key"], currentTab: TabsDataType) => void;
+  defaultKey?: Key;
+  onChange?: (key: Key, currentTab: TabsDataType) => void;
 };
 
 export const Tabs: FC<PropsType> = memo((props) => {
   const { items, defaultKey, className, onChange } = props;
-  const [currentKey, setCurrentKey] = useState<TabsDataType["key"]>(
-    defaultKey || 0,
-  );
+  const [currentKey, setCurrentKey] = useState<Key>(0);
 
   const currentTab = useMemo(() => {
     if (defaultKey || currentKey) {
-      return items.find((item) => item.key === currentKey);
+      return items.reduce((acc, item) => {
+        if (item.key === currentKey) {
+          acc = item;
+        } else {
+          acc = items[0];
+        }
+
+        return acc;
+      }, null);
     }
 
     return items[currentKey as number];
