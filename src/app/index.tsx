@@ -2,6 +2,20 @@ import "./styles/index.scss";
 import { Button } from "shared/ui/button/ui";
 import SearchIcon from "shared/assets/svg/search.svg";
 import { Input } from "shared/ui/input/ui";
+import { Tabs, TabsDataType } from "shared/ui/tabs";
+
+const tabs: Array<TabsDataType> = [
+  {
+    label: "Описание",
+    key: "description",
+    children: "Children1",
+  },
+  {
+    label: "Отзывы",
+    key: "reviews",
+    children: "Children2",
+  },
+];
 
 export const App = () => {
   return (
@@ -17,29 +31,50 @@ export const App = () => {
         Отправить
       </Button>
       <br />
-      <Input placeholder={"Введите имя пользователя"} />
+      <Input
+        placeholder={"Введите имя пользователя"}
+        prefix={<SearchIcon />}
+        suffix={<SearchIcon />}
+      />
       <br />
-      <Input placeholder={"Введите имя пользователя"} dimension={"sm"} />
+      <Input
+        placeholder={"Введите имя пользователя"}
+        dimension={"sm"}
+        prefix={<SearchIcon />}
+        suffix={<SearchIcon />}
+      />
       <br />
-      <Input placeholder={"Введите имя пользователя"} dimension={"md"} />
+      <Input
+        placeholder={"Введите имя пользователя"}
+        dimension={"md"}
+        prefix={<SearchIcon />}
+        suffix={<SearchIcon />}
+      />
       <br />
       <Input placeholder={"Введите имя пользователя"} theme={"danger"} />
       <br />
       <Input
+        label={"Имя"}
         placeholder={"Введите имя пользователя"}
         theme={"danger"}
         dimension={"sm"}
       />
       <br />
       <Input
+        label={"Имя"}
         placeholder={"Введите имя пользователя"}
         theme={"danger"}
         dimension={"md"}
       />
       <br />
-      <Input placeholder={"Введите имя пользователя"} theme={"accent"} />
+      <Input
+        label={"Имя"}
+        placeholder={"Введите имя пользователя"}
+        theme={"accent"}
+      />
       <br />
       <Input
+        label={"Имя"}
         placeholder={"Введите имя пользователя"}
         theme={"accent"}
         dimension={"md"}
@@ -50,6 +85,8 @@ export const App = () => {
         theme={"accent"}
         dimension={"lg"}
       />
+      <br />
+      <Tabs items={tabs} defaultKey={1221321} />
     </>
   );
 };

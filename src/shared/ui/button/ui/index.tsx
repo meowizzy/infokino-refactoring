@@ -1,8 +1,8 @@
-import { ButtonHTMLAttributes, FC, memo, ReactNode } from "react";
+import { ComponentProps, FC, memo, ReactNode } from "react";
 import cn from "classnames";
 import cls from "./Button.module.scss";
 
-type PropsType = ButtonHTMLAttributes<HTMLButtonElement> & {
+type PropsType = ComponentProps<"button"> & {
   theme?: "primary" | "danger" | "clear" | "accent";
   size?: "sm" | "md" | "lg";
   icon?: ReactNode;
