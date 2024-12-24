@@ -25,18 +25,26 @@ export function webpackLoaders(
     },
   };
 
-  const svgrLoader = {
-    test: /\.svg$/i,
-    issuer: /\.[jt]sx?$/,
-    use: [
-      {
-        loader: "@svgr/webpack",
-        options: {
-          dimensions: false,
+  const svgrLoader = [
+    {
+      test: /\.svg$/i,
+      type: "asset",
+      resourceQuery: /url/,
+    },
+    {
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      resourceQuery: { not: [/url/] },
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            dimensions: false,
+          },
         },
-      },
-    ],
-  };
+      ],
+    },
+  ];
 
   const babelTsLoader = {
     test: /\.(jsx?|tsx?)$/,
@@ -72,5 +80,5 @@ export function webpackLoaders(
     ],
   };
 
-  return [babelTsLoader, scssLoader, svgrLoader, imagesLoader, fontsLoader];
+  return [babelTsLoader, scssLoader, ...svgrLoader, imagesLoader, fontsLoader];
 }

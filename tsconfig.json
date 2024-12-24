@@ -12,7 +12,15 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "paths": {
-      "*": ["./src/*"]
+      "@app/": ["./src/app/index.tsx"],
+      "@app/*": ["./src/app/*"],
+      "@styles/*": ["./src/app/styles/*"],
+      "@features/*": ["./src/features/*"],
+      "@entities/*": ["./src/entities/*"],
+      "@widgets/*": ["./src/widgets/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@ui/*": ["./src/shared/ui/*"],
+      "@assets/*": ["./src/shared/ui/assets/*"]
     },
     "plugins": [
       {

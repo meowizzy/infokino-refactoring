@@ -1,0 +1,20 @@
+.tabs {
+  position: relative;
+}
+.tabsNavigation {
+  background-color: var(--color-primary);
+  padding: 10px;
+  border-radius: var(--radius-xl);
+}
+.tabsList {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  list-style: none;
+}
+.tabsItem {
+  position: relative;
+}
+.tabsContent {
+  padding: 10px 0;
+}

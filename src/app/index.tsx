@@ -1,8 +1,8 @@
 import "./styles/index.scss";
-import { Button } from "shared/ui/button/ui";
 import SearchIcon from "shared/assets/svg/search.svg";
-import { Input } from "shared/ui/input/ui";
-import { Tabs, TabsDataType } from "shared/ui/tabs";
+import { Button } from "@ui/button";
+import { Input } from "@ui/input";
+import { Tabs, TabsDataType } from "@ui/tabs";
 
 const tabs: Array<TabsDataType> = [
   {
@@ -86,7 +86,7 @@ export const App = () => {
         dimension={"lg"}
       />
       <br />
-      <Tabs items={tabs} defaultKey={1221321} />
+      <Tabs items={tabs} defaultKey={"reviews"} />
     </>
   );
 };
