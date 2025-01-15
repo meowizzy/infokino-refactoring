@@ -1,92 +1,25 @@
-import "./styles/index.scss";
-import SearchIcon from "shared/assets/svg/search.svg";
 import { Button } from "@ui/button";
-import { Input } from "@ui/input";
-import { Tabs, TabsDataType } from "@ui/tabs";
-
-const tabs: Array<TabsDataType> = [
-  {
-    label: "Описание",
-    key: "description",
-    children: "Children1",
-  },
-  {
-    label: "Отзывы",
-    key: "reviews",
-    children: "Children2",
-  },
-];
+import { Modal } from "@ui/modal/ui";
+import { useState } from "react";
 
 export const App = () => {
+  const [opened, setOpened] = useState<boolean>(false);
+  const [opened1, setOpened1] = useState<boolean>(false);
+
   return (
-    <>
-      <Button theme={"accent"} size={"sm"}>
-        Отправить
-      </Button>
-      <Button theme={"primary"} icon={<SearchIcon />} size={"md"}>
-        Отправить
-      </Button>
-      <Button theme={"danger"} icon={<SearchIcon />} size={"lg"} />
-      <Button theme={"clear"} icon={<SearchIcon />}>
-        Отправить
-      </Button>
-      <br />
-      <Input
-        placeholder={"Введите имя пользователя"}
-        prefix={<SearchIcon />}
-        suffix={<SearchIcon />}
-      />
-      <br />
-      <Input
-        placeholder={"Введите имя пользователя"}
-        dimension={"sm"}
-        prefix={<SearchIcon />}
-        suffix={<SearchIcon />}
-      />
-      <br />
-      <Input
-        placeholder={"Введите имя пользователя"}
-        dimension={"md"}
-        prefix={<SearchIcon />}
-        suffix={<SearchIcon />}
-      />
-      <br />
-      <Input placeholder={"Введите имя пользователя"} theme={"danger"} />
-      <br />
-      <Input
-        label={"Имя"}
-        placeholder={"Введите имя пользователя"}
-        theme={"danger"}
-        dimension={"sm"}
-      />
-      <br />
-      <Input
-        label={"Имя"}
-        placeholder={"Введите имя пользователя"}
-        theme={"danger"}
-        dimension={"md"}
-      />
-      <br />
-      <Input
-        label={"Имя"}
-        placeholder={"Введите имя пользователя"}
-        theme={"accent"}
-      />
-      <br />
-      <Input
-        label={"Имя"}
-        placeholder={"Введите имя пользователя"}
-        theme={"accent"}
-        dimension={"md"}
-      />
-      <br />
-      <Input
-        placeholder={"Введите имя пользователя"}
-        theme={"accent"}
-        dimension={"lg"}
-      />
-      <br />
-      <Tabs items={tabs} defaultKey={"reviews"} />
-    </>
+    <div className="wrapper">
+      {/*<Button onClick={() => setOpened(true)}>Открыть модальное окно</Button>*/}
+      {/*<Button onClick={() => setOpened1(true)}>Открыть модальное окно 2</Button>*/}
+      {/*<Modal open={opened} onClose={() => setOpened(false)}>*/}
+      {/*  Модальное окно*/}
+      {/*</Modal>*/}
+      {/*<Modal*/}
+      {/*  open={opened1}*/}
+      {/*  onClose={() => setOpened1(false)}*/}
+      {/*  withContainer={false}*/}
+      {/*>*/}
+      {/*  Модальное окно2*/}
+      {/*</Modal>*/}
+    </div>
   );
 };

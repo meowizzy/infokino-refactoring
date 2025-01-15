@@ -41,7 +41,7 @@ export default tsEslint.config(
       "@typescript-eslint/no-unused-vars": "warn",
       "@/quotes": ["warn", "double", { avoidEscape: true }],
       semi: ["error", "always"],
-      indent: [1, 2],
+      indent: [1, 2, { SwitchCase: 1 }],
       "react/react-in-jsx-scope": "off",
       "no-unused-vars": "warn",
       "prefer-const": "warn",

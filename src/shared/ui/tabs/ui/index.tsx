@@ -1,13 +1,8 @@
-import { FC, Key, memo, ReactNode, useMemo, useState } from "react";
+import { FC, Key, memo, useMemo, useState } from "react";
 import cn from "classnames";
 import cls from "./Tabs.module.scss";
 import { Button } from "@ui/button";
-
-export type TabsDataType = {
-  key: Key;
-  label: string;
-  children: ReactNode;
-};
+import { TabsDataType } from "../types";
 
 type PropsType = {
   items: Array<TabsDataType>;

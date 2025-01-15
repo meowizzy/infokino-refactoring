@@ -7,12 +7,14 @@ export function webpackResolvers({
   const alias = {
     "@app/": `${path.src}/app/index`,
     "@app": `${path.src}/app/`,
+    "@providers": `${path.src}/app/providers`,
     "@features": `${path.src}/features/`,
     "@entities": `${path.src}/entities/`,
     "@widgets": `${path.src}/widgets/`,
     "@shared": `${path.src}/shared/`,
     "@ui": `${path.src}/shared/ui/`,
     "@assets": `${path.src}/shared/assets/`,
+    "@hooks": `${path.src}/shared/hooks/`,
   };
 
   return {

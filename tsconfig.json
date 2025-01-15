@@ -14,14 +14,16 @@
     "paths": {
       "@app/": ["./src/app/index.tsx"],
       "@app/*": ["./src/app/*"],
+      "@providers": ["./src/app/providers/*"],
       "@styles/*": ["./src/app/styles/*"],
       "@features/*": ["./src/features/*"],
       "@entities/*": ["./src/entities/*"],
       "@widgets/*": ["./src/widgets/*"],
       "@shared/*": ["./src/shared/*"],
       "@ui/*": ["./src/shared/ui/*"],
-      "@assets/*": ["./src/shared/ui/assets/*"]
-    },
+      "@assets/*": ["./src/shared/ui/assets/*"],
+      "@hooks/*": ["./src/shared/hooks/*"]
+},
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"

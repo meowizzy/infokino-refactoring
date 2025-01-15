@@ -1,4 +1,4 @@
-import { ComponentProps, FC, memo, ReactNode } from "react";
+import { ComponentProps, memo, ReactNode } from "react";
 import cn from "classnames";
 import cls from "./Button.module.scss";
 
@@ -9,7 +9,7 @@ type PropsType = ComponentProps<"button"> & {
   loading?: boolean;
 };
 
-export const Button: FC<PropsType> = memo((props) => {
+export const Button = memo((props: PropsType) => {
   const {
     theme = "primary",
     size = "lg",

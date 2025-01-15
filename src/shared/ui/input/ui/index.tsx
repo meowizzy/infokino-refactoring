@@ -7,7 +7,7 @@ type PropsType = Omit<ComponentProps<"input">, "prefix"> & {
   fullWidth?: boolean;
   value?: string;
   label?: string;
-  type?: "text";
+  type?: "text" | "email" | "password";
   prefix?: ReactNode;
   suffix?: ReactNode;
   theme?: "primary" | "danger" | "accent";
@@ -15,7 +15,7 @@ type PropsType = Omit<ComponentProps<"input">, "prefix"> & {
   onChange?: (value: string) => void;
 };
 
-export const Input: FC<PropsType> = memo((props) => {
+export const Input = memo((props: PropsType) => {
   const {
     value,
     onChange,
