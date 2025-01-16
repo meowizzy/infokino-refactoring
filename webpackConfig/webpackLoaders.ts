@@ -1,6 +1,6 @@
-import { TWebpackOptions } from "./types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
+import { TWebpackOptions } from "./types";
 
 export function webpackLoaders(
   options: TWebpackOptions,

@@ -1,6 +1,6 @@
 import path from "node:path";
-import { TWebpackOptions } from "./types";
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import { TWebpackOptions } from "./types";
 
 export function webpackDevServer(
   options: TWebpackOptions,

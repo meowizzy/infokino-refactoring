@@ -1,20 +1,32 @@
 .tabs {
   position: relative;
 }
+
 .tabsNavigation {
   background-color: var(--color-primary);
   padding: 10px;
   border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
 }
+
 .tabsList {
   display: flex;
   align-items: center;
   column-gap: 10px;
   list-style: none;
+  flex-grow: 1;
 }
+
 .tabsItem {
   position: relative;
 }
+
 .tabsContent {
   padding: 10px 0;
+}
+
+.suffix {
+  margin-left: auto;
 }

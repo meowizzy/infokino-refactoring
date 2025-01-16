@@ -1,10 +1,10 @@
 import path from "node:path";
 import { WebpackConfiguration } from "webpack-cli";
 import { TWebpackEnv, TWebpackOptions } from "./webpackConfig/types";
-import { webpackResolvers } from "./webpackConfig/webpackResolvers";
-import { webpackPlugins } from "./webpackConfig/webpackPlugins";
-import { webpackLoaders } from "./webpackConfig/webpackLoaders";
 import { webpackDevServer } from "./webpackConfig/webpackDevServer";
+import { webpackLoaders } from "./webpackConfig/webpackLoaders";
+import { webpackPlugins } from "./webpackConfig/webpackPlugins";
+import { webpackResolvers } from "./webpackConfig/webpackResolvers";
 
 export default (env: TWebpackEnv): WebpackConfiguration => {
   const port = env.port || 3000;

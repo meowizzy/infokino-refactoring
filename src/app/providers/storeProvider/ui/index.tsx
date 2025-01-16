@@ -1,6 +1,6 @@
+import { ReactNode } from "react";
 import { Provider } from "react-redux";
 import { store } from "../index";
-import { ReactNode } from "react";
 
 type StoreProviderPropsType = {
   children?: ReactNode;

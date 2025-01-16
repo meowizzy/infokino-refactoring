@@ -1,4 +1,4 @@
-import { FC, Key, memo, useMemo, useState } from "react";
+import { FC, Key, memo, ReactNode, useMemo, useState } from "react";
 import cn from "classnames";
 import { Button } from "@ui/button";
 import { TabsDataType } from "../types";
@@ -10,10 +10,18 @@ type PropsType = {
   defaultKey?: Key;
   onChange?: (key: Key, currentTab: TabsDataType) => void;
   tabSize?: "sm" | "md" | "lg";
+  suffix?: ReactNode;
 };
 
 export const Tabs: FC<PropsType> = memo((props) => {
-  const { items, defaultKey, className, onChange, tabSize = "md" } = props;
+  const {
+    items,
+    defaultKey,
+    className,
+    onChange,
+    tabSize = "md",
+    suffix,
+  } = props;
   const [currentKey, setCurrentKey] = useState<Key | undefined>(defaultKey);
 
   const currentTab = useMemo(() => {
@@ -35,6 +43,14 @@ export const Tabs: FC<PropsType> = memo((props) => {
     if (onChange) {
       onChange(key, currentTab);
     }
+  };
+
+  const renderSuffix = () => {
+    if (suffix) {
+      return <div className={cls.suffix}>{suffix}</div>;
+    }
+
+    return null;
   };
 
   return (
@@ -60,6 +76,7 @@ export const Tabs: FC<PropsType> = memo((props) => {
             );
           })}
         </ul>
+        {renderSuffix()}
       </nav>
       <div className={cls.tabsContent}>{currentTab.children}</div>
     </div>

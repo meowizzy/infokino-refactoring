@@ -1,8 +1,8 @@
 import eslint from "@eslint/js";
-import tsEslint from "typescript-eslint";
-import reactRefresh from "eslint-plugin-react-refresh";
 import eslintConfigPrettier from "eslint-config-prettier";
 import eslintPluginPrettier from "eslint-plugin-prettier";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tsEslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default tsEslint.config(

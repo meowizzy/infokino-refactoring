@@ -1,6 +1,6 @@
 import { ChangeEventHandler, ComponentProps, FC, memo, ReactNode } from "react";
-import cls from "./Input.module.scss";
 import cn from "classnames";
+import cls from "./Input.module.scss";
 
 type PropsType = Omit<ComponentProps<"input">, "prefix"> & {
   className?: string;
