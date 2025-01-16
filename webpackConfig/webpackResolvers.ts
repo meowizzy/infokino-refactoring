@@ -14,7 +14,7 @@ export function webpackResolvers({
     "@shared": `${path.src}/shared/`,
     "@ui": `${path.src}/shared/ui/`,
     "@assets": `${path.src}/shared/assets/`,
-    "@hooks": `${path.src}/shared/hooks/`,
+    "@hooks": `${path.src}/shared/lib/hooks/`,
   };
 
   return {

@@ -1,18 +1,19 @@
 import { FC, Key, memo, useMemo, useState } from "react";
 import cn from "classnames";
-import cls from "./Tabs.module.scss";
 import { Button } from "@ui/button";
 import { TabsDataType } from "../types";
+import cls from "./Tabs.module.scss";
 
 type PropsType = {
   items: Array<TabsDataType>;
   className?: string;
   defaultKey?: Key;
   onChange?: (key: Key, currentTab: TabsDataType) => void;
+  tabSize?: "sm" | "md" | "lg";
 };
 
 export const Tabs: FC<PropsType> = memo((props) => {
-  const { items, defaultKey, className, onChange } = props;
+  const { items, defaultKey, className, onChange, tabSize = "md" } = props;
   const [currentKey, setCurrentKey] = useState<Key | undefined>(defaultKey);
 
   const currentTab = useMemo(() => {
@@ -50,7 +51,7 @@ export const Tabs: FC<PropsType> = memo((props) => {
               >
                 <Button
                   theme={isCurrentTab ? "accent" : "primary"}
-                  size={"lg"}
+                  size={tabSize}
                   onClick={() => onClickTabChange(item.key, item)}
                 >
                   {item.label}

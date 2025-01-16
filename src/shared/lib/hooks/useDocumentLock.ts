@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const html = document.documentElement;
 const scrollBarWidth = window.innerWidth - html.clientWidth;
 
-export const useDocumentLock = (open: boolean) => {
+export const useDocumentLocking = (open: boolean) => {
   useEffect(() => {
     if (open) {
       html.classList.add("locked");

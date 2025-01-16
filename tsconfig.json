@@ -22,8 +22,8 @@
       "@shared/*": ["./src/shared/*"],
       "@ui/*": ["./src/shared/ui/*"],
       "@assets/*": ["./src/shared/ui/assets/*"],
-      "@hooks/*": ["./src/shared/hooks/*"]
-},
+      "@hooks/*": ["./src/shared/lib/hooks/*"]
+    },
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"

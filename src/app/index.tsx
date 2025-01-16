@@ -1,25 +1,30 @@
 import { Button } from "@ui/button";
-import { Modal } from "@ui/modal/ui";
-import { useState } from "react";
+import { Modal, useModal } from "@ui/modal";
+import { Tabs } from "@ui/tabs";
+import { TabsDataType } from "@ui/tabs/types";
 
 export const App = () => {
-  const [opened, setOpened] = useState<boolean>(false);
-  const [opened1, setOpened1] = useState<boolean>(false);
+  const { modalProps, closeModal, openModal } = useModal();
+
+  const tabsDataSource: TabsDataType[] = [
+    {
+      key: "1",
+      label: "Вход",
+      children: "Авторизация",
+    },
+    {
+      key: "2",
+      label: "Регистрация",
+      children: "Зарегистрироваться",
+    },
+  ];
 
   return (
     <div className="wrapper">
-      {/*<Button onClick={() => setOpened(true)}>Открыть модальное окно</Button>*/}
-      {/*<Button onClick={() => setOpened1(true)}>Открыть модальное окно 2</Button>*/}
-      {/*<Modal open={opened} onClose={() => setOpened(false)}>*/}
-      {/*  Модальное окно*/}
-      {/*</Modal>*/}
-      {/*<Modal*/}
-      {/*  open={opened1}*/}
-      {/*  onClose={() => setOpened1(false)}*/}
-      {/*  withContainer={false}*/}
-      {/*>*/}
-      {/*  Модальное окно2*/}
-      {/*</Modal>*/}
+      <Button onClick={openModal}>Открыть модальное окно</Button>
+      <Modal open={modalProps.visible} onClose={closeModal}>
+        <Tabs items={tabsDataSource} defaultKey={"1"} />
+      </Modal>
     </div>
   );
 };
